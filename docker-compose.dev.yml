@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  main-landingpage-dev:
+    build: 
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "3001:3001" 

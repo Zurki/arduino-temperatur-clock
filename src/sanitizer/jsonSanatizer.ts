@@ -13,7 +13,11 @@ export default class WeatherJsonSanitizer {
   }
 
   private static getTime() {
-    return new Date();
+    return (new Date()).toLocaleString(
+      'de-DE', {
+        timeZone: 'Europe/Berlin'
+      }
+    );
   }
 
   private static getTemp(jsonObject: any) {

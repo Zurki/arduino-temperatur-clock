@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  main-landingpage-dev:
+  smarthome-arduino-temperature:
     build: 
       context: .
       dockerfile: ./docker/dev/Dockerfile
     volumes:
       - ./src:/app/src
     ports:
-      - "3001:3001"
+      - ${SERVER_PORT}:${SERVER_PORT}

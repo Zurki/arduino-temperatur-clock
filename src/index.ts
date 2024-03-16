@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import Weather from './api/weather.ts'; 
+import Weather from './api/weather'; 
 
 dotenv.config({override: true});
 

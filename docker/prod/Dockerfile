@@ -1,15 +1,16 @@
-FROM node:21-alpine
-
+FROM node:18-alpine as DEV_BUILD 
 WORKDIR /app
 
-COPY package.json ./
+
+COPY ../../package.json .
 
 RUN npm install
 
-COPY . .
+COPY ../../. .
 
-EXPOSE 3001
+RUN npm run build
 
-RUN npm build
+ENV PORT $PORT
+EXPOSE $PORT
 
-CMD["npm", "start"]
+CMD [ "npm", "run", "start"]

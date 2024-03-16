@@ -23,7 +23,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd ${secrets.LOCATION} 
+          cd /home/smarthome-arduino-temperature 
           git pull origin master
           git status
           docker compose -f docker-compose.prod.yml down

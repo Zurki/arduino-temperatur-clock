@@ -4,7 +4,8 @@ export default class WeatherJsonSanitizer {
       "city": this.getName(jsonObject),
       "time": this.getTime(),
       "temperature": this.getTemp(jsonObject),
-      "humidity": this.getHumidity(jsonObject)
+      "humidity": this.getHumidity(jsonObject),
+      "weather": this.getWeather(jsonObject)
     };
   }
 
@@ -26,5 +27,9 @@ export default class WeatherJsonSanitizer {
 
   private static getHumidity(jsonObject: any) {
     return jsonObject['main']['humidity'];
+  }
+
+  private static getWeather(jsonObject: any) {
+    return jsonObject['weather']['main'];
   }
 }

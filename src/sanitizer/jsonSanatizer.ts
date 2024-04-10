@@ -30,6 +30,6 @@ export default class WeatherJsonSanitizer {
   }
 
   private static getWeather(jsonObject: any) {
-    return jsonObject['weather']['main'];
+    return jsonObject['weather'][0]['main'];
   }
 }

@@ -19,7 +19,7 @@ export default class Weather {
         params: this.buildUrlParams(lat, lon)
       });
      
-      return WeatherJsonSanitizer.sanitize(response.data)
+      return WeatherJsonSanitizer.sanitize(response.data);
     } catch (error) {
       console.log(error);
       

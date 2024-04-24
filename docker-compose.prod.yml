@@ -17,7 +17,7 @@ services:
       - ${SERVER_PORT}:${SERVER_PORT}
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.smarthome-arduino-temperature.rule=Host(`${WEB_URL}`)"
+      - "traefik.http.routers.smarthome-arduino-temperature.rule=Host(`${WEB_URL}`, `www.${WEB_URL}`)"
       - "traefik.http.routers.smarthome-arduino-temperature.entrypoints=web"
       - "traefik.http.middlewares.smarthome-arduino-temperature.ratelimit.average=41"
       - "traefik.http.middlewares.smarthome-arduino-temperature.ratelimit.period=24h"
